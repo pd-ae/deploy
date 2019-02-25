@@ -1,0 +1,7 @@
+#!/bin/sh
+
+build_version=$CI_COMMIT_REF_NAME-$CI_PIPELINE_ID
+solution=$(basename $(ls *.sln) .sln)
+src=$solution/bin/Release
+
+zip -j $solution-$build_version.zip $src/*.dll $src/*.dist doc/*.pdf
