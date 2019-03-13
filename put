@@ -11,4 +11,4 @@ else
   file=$1
 fi
 
-curl -s -f -u $CLOUD_CREDENTIALS -T "$file" "$CLOUD_URL/$2/" --write-out '%{http_code} ' --show-error
+curl -k -s -f -u $CLOUD_CREDENTIALS -T "$file" "$CLOUD_URL/$2/" --write-out '%{http_code} ' --show-error
