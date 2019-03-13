@@ -1,0 +1,14 @@
+#!/bin/sh
+
+[ -z "$CLOUD_URL" ] && echo "CLOUD_URL is not set, exiting" && exit 1
+[ -z "$CLOUD_CREDENTIALS" ] && echo "CLOUD_CREDENTIALS is not set, exiting" && exit 1
+
+if [ "$1" = "package" ]; then
+  build_version=$CI_COMMIT_REF_NAME-$CI_PIPELINE_ID
+  solution=$(basename $(ls *.sln) .sln)
+  file=$solution-$build_version.zip
+else
+  file=$1
+fi
+
+curl -u $CLOUD_CREDENTIALS -T "$file" "$CLOUD_URL/$2/"
