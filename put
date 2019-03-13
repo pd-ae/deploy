@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 [ -z "$CLOUD_URL" ] && echo "CLOUD_URL is not set, exiting" && exit 1
 [ -z "$CLOUD_CREDENTIALS" ] && echo "CLOUD_CREDENTIALS is not set, exiting" && exit 1
