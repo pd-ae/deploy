@@ -7,3 +7,6 @@ RUN mkdir -p ~/.ssh && \
 
 COPY pack /usr/local/bin/
 RUN chmod +x /usr/local/bin/pack
+
+COPY put /usr/local/bin/
+RUN chmod +x /usr/local/bin/put
