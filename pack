@@ -5,4 +5,5 @@ solution=$(basename $(ls *.sln) .sln)
 src=$solution/bin/Release
 
 zip -j $solution-$build_version.zip $src/*.dll doc/*.pdf
+rm $src/*.dist
 zip -juR $solution-$build_version.zip "*.dist"
